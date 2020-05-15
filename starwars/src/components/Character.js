@@ -11,7 +11,6 @@ const api_key = 'people/'
 export default function Character() {
     const [data, setData] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
-    const [filter, setFilter] = useState([])
 
     useEffect(() => {
         axios.get(url + api_key)
@@ -42,18 +41,11 @@ export default function Character() {
         <div>
             <Search updateSearchTerm={setSearchTerm}/>
         <div className="character-list">
-        {result.map((el, i) => (
-            <CharacterCard data={el} key={i} />
-        ), [])}
+            {result.map((el, i) => (
+                <CharacterCard data={el} key={i} />
+            ), [])}
         </div>
         </div>
     )
 
 }
-
-/*
-
-            {data.map((el, i) => (
-                <CharacterCard data={el} key={i} />
-            ), [])}
-*/

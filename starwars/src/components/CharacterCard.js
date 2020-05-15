@@ -8,7 +8,7 @@ const CharacterCard = props => {
 
     const toggle = () => setIsOpen(!isOpen);
 
-    console.log(props.data);
+    const appearances = (props.data.films).length
 
     return (
         <Jumbotron>
@@ -30,6 +30,9 @@ const CharacterCard = props => {
                 </h4>
                 <h4 className="char-mass">
                     Weight: {props.data.mass}
+                </h4>
+                <h4 className="char-appearances">
+                    Movie Appearances: {appearances}
                 </h4>
                 </div>
                 </Collapse>
